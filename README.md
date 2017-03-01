@@ -38,7 +38,9 @@ TensorFlow
 ```
 - Start with the Master Data and Auth Server
 - Harvest and Process iTunes Data
+- Harvest Data from APIs
+- Implement Scraper
 
-# The Unknown
+# The Unknowns
 - How to schedule batch jobs (check DataFlow)
 - Smart way to scale up on scraping sites: we wont survive having to code a new script everytime we add a new site
