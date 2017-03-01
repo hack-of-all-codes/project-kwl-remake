@@ -21,9 +21,11 @@ Got bored today and decided to make some Evil Plans for Remaking the KWL Project
 - Use a Gateway Server
 - Use OAuth2: huge security risk with writing up our own security framework
 - Use Reactive endpoints for Server-to-Server communication
+- Mockito and JUnit5 Tests!!!
 
 ## Wishlist: Front End
 - Use ReactJS + Flux instead of Angular as the app framework
+- Unit Tests (Karma?)
 
 # The Plan
 - Figure out the following technologies
