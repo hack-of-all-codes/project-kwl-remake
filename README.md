@@ -15,9 +15,12 @@ Got bored today and decided to make some Evil Plans for Remaking the KWL Project
 
 ## Wishlist: Platform
 - Use Spring Boot as the main framework
+- Use Spring Data for Mongo: less code means less bugs, more productivity
+- Use Spring HATEOAS for exposing data: way less code than having to manually write every endpoint
 - Separate Master Data and Metrics
 - Use a Gateway Server
-- Use OAuth2, theres no freakin way
+- Use OAuth2: huge security risk with writing up our own security framework
+- Use Reactive endpoints for Server-to-Server communication
 
 ## Wishlist: Front End
 - Use ReactJS + Flux instead of Angular as the app framework
