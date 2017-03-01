@@ -34,7 +34,7 @@ Nutch
 TensorFlow
 ```
 - Start with the Master Data and Auth Server
-- 
+- Harvest and Process iTunes Data
 
 # The Unknown
 - How to schedule batch jobs (check DataFlow)
