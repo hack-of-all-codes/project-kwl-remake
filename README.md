@@ -33,7 +33,7 @@ Just 1 rule/constraint that I need to follow: Only use EC2 machines for everythi
 
 ## Wishlist: Everything Else
 - Unit and Integrations Tests
-- Jnekins CI
+- Jenkins CI
 
 ## Things that I would personally love to keep
 - ElasticSearch: freakin awesome
