@@ -1,5 +1,6 @@
 # Remake: KWL Project
 Got bored today and decided to make some Evil Plans for Remaking the KWL Project from the ground up.
+Only 1 rule that I need to follow: Only use EC2 machines for everything
 
 ## Wishlist: Data Harvesting
 - Create separate Spring Boot modules for each type of harvesting
@@ -26,6 +27,16 @@ Got bored today and decided to make some Evil Plans for Remaking the KWL Project
 ## Wishlist: Front End
 - Use ReactJS + Flux instead of Angular as the app framework
 - Unit Tests (Karma?)
+- Use Polymer/WebComponents for the Admin just for fun
+
+## Wishlist: Everything Else
+- Unit and Integrations Tests
+- Jnekins CI
+
+## Things that I would personally love to keep
+- ElasticSearch: freakin awesome
+- MongoDB: best storage for master data
+- Ansible
 
 # The Plan
 - Figure out the following technologies
