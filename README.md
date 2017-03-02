@@ -1,6 +1,6 @@
 # Remake: KWL Project
 Got bored today and decided to make some Evil Plans for Remaking the KWL Project from the ground up.
-Only 1 rule that I need to follow: Only use EC2 machines for everything
+Just 1 rule/constraint that I need to follow: Only use EC2 machines for everything
 
 ## Wishlist: Data Harvesting
 - Create separate Spring Boot modules for each type of harvesting
@@ -23,6 +23,7 @@ Only 1 rule that I need to follow: Only use EC2 machines for everything
 - Use OAuth2: huge security risk with writing up our own security framework
 - Use Reactive endpoints for Server-to-Server communication
 - Mockito and JUnit5 Tests!!!
+- Payment and User Accounts should be stored in a transactional database
 
 ## Wishlist: Front End
 - Use ReactJS + Flux instead of Angular as the app framework
