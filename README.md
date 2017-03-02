@@ -25,6 +25,9 @@ Just 1 rule/constraint that I need to follow: Only use EC2 machines for everythi
 - Use Reactive endpoints for Server-to-Server communication
 - Mockito and JUnit5 Tests!!!
 - Payment and User Accounts should be stored in a transactional database
+- Use MyBatis for Metrics query
+- Cache Metrics Results (Possibly in Redis), or export as Mongo Document, whatever makes sense
+- Liquibase for schema version control
 
 ## Wishlist: Front End
 - Use ReactJS + Flux instead of Angular as the app framework
@@ -50,6 +53,7 @@ Spark
 Hadoop
 Nutch
 TensorFlow
+Spring + MyBatis
 ```
 - Start with the Master Data and Auth Server
 - Harvest and Process iTunes Data
