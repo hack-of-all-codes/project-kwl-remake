@@ -6,6 +6,7 @@ Just 1 rule/constraint that I need to follow: Only use EC2 machines for everythi
 - Create separate Spring Boot modules for each type of harvesting
 - Use Spring Boot + Whatever Framework for scraping sites (check out Nutch)
 - Scraper should harvest and store data without processing its contents
+- Harvested Data should be stored in CassandraDB
 
 ## Wishlist: Data Processing
 - Use Spring Cloud Dataflow instead of Pentaho
