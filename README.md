@@ -55,6 +55,7 @@ TensorFlow
 - Harvest and Process iTunes Data
 - Harvest Data from APIs
 - Implement Scraper
+- Setup Jenkins
 
 # The Unknowns
 - How to schedule batch jobs (check DataFlow)
