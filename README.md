@@ -60,6 +60,10 @@ Spring + MyBatis
 - Harvest Data from APIs
 - Implement Scraper
 - Setup Jenkins
+- Setup Fault Tolerance
+```
+Hystrix
+```
 
 # The Unknowns
 - How to schedule batch jobs (check DataFlow)
