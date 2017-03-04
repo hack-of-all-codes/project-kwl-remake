@@ -68,3 +68,11 @@ Hystrix
 # The Unknowns
 - How to schedule batch jobs (check DataFlow)
 - Smart way to scale up on scraping sites: we wont survive having to code a new script everytime we add a new site
+
+# Important Resources
+```
+Spring Security
+https://spring.io/guides/tutorials/spring-security-and-angular-js/
+https://github.com/spring-guides/tut-spring-security-and-angular-js
+https://projects.spring.io/spring-security-oauth/docs/oauth2.html
+```
