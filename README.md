@@ -40,7 +40,7 @@ Just 1 rule/constraint that I need to follow: Only use EC2 machines for everythi
 
 ## Things that I would personally love to keep
 - ElasticSearch: freakin awesome
-- MongoDB: best storage for master data
+- MongoDB: best storage for master data, we just didnt use async, sad :(
 - Ansible
 
 # The Plan
@@ -54,6 +54,7 @@ Hadoop
 Nutch
 TensorFlow
 Spring + MyBatis
+Kafka - no idea where to use this
 ```
 - Start with the Master Data and Auth Server
 - Harvest and Process iTunes Data
