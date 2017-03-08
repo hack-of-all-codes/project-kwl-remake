@@ -64,10 +64,10 @@ Kafka - no idea where to use this
 ```
 Hystrix
 ```
-## Phase 2: Automate Build
+## Phase 2: Make it Cool
 - Setup Jenkins
 
-## Phase 3: Make it Fault Tolerant
+## Phase 3: Make it Invinsible
 - Setup Fault Tolerance
 
 # The Unknowns
