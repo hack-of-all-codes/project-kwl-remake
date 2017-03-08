@@ -44,6 +44,7 @@ Just 1 rule/constraint that I need to follow: Only use EC2 machines for everythi
 - Ansible
 
 # The Plan
+## Phase 1: Make It Work
 - Figure out the following technologies
 ```
 Spring Cloud DataFlow
@@ -60,11 +61,14 @@ Kafka - no idea where to use this
 - Harvest and Process iTunes Data
 - Harvest Data from APIs
 - Implement Scraper
-- Setup Jenkins
-- Setup Fault Tolerance
 ```
 Hystrix
 ```
+## Phase 2: Automate Build
+- Setup Jenkins
+
+## Phase 3: Make it Fault Tolerant
+- Setup Fault Tolerance
 
 # The Unknowns
 - How to schedule batch jobs (check DataFlow)
