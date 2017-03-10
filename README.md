@@ -1,6 +1,7 @@
 # Remake: KWL Project
-Got bored today and decided to make some Evil Plans for Remaking the KWL Project from the ground up.
-Just 1 rule/constraint that I need to follow: Only use EC2 machines for everything
+- Got bored today and decided to make some Evil Plans for Remaking the KWL Project from the ground up.
+- Just 1 rule/constraint that I need to follow: Only use EC2 machines for everything
+- [Business Rules](BUSINESS_RULES.md)
 
 ## Wishlist: Data Harvesting
 - Create separate Spring Boot modules for each type of harvesting
