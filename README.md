@@ -67,6 +67,7 @@ Hystrix
 ```
 ## Phase 2: Make it Cool
 - Setup Jenkins
+- Setup a Monitoring Service
 
 ## Phase 3: Make it Invinsible
 - Setup Fault Tolerance
