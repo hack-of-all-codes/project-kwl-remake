@@ -1,4 +1,4 @@
-# Business Requirements and Rules
+# Business Model and Rules
 Some rough draft of the estimates, things that I think are important for our target users - Music Labels looking for some upcoming artist
 
 ## Data to Present
@@ -31,3 +31,4 @@ rank how well the artist is performing at certain markets
 - Artist
 - Album
 - Song
+- Label
