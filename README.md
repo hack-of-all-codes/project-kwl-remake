@@ -1,4 +1,4 @@
-# Remake: KWL Project
+# Project: KWL Remake
 - Got bored today and decided to make some Evil Plans for Remaking the KWL Project from the ground up.
 - Just 1 rule/constraint that I need to follow: Only use EC2 machines for everything
 - [Business Rules](BUSINESS_RULES.md)
