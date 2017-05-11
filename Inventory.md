@@ -4,7 +4,7 @@
 ```
 
 Admin Dashboard
-  |                               Worker ------------------ Web Scraper (Python/Scrapy)
+  |            (External API)  ---Worker ------------------ Web Scraper (Python/Scrapy)
   |                                 |
   |   |--------------------- Master Data (Mongo) ------------------------|
 KWL API--------------------- Metrics (PostgreSQL) ---------------------- Data Processor (Pentaho DI)
@@ -12,3 +12,9 @@ KWL API--------------------- Metrics (PostgreSQL) ---------------------- Data Pr
   |
 KWL360 Dashboard
 ```
+
+#### Data Sources:
+- [iTunes Enterprise Feed](https://affiliate.itunes.apple.com/resources/documentation/itunes-enterprise-partner-feed/)
+- Twitter
+- Facebook
+- LastFM
