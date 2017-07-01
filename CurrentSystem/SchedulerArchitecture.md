@@ -22,7 +22,7 @@ Runs in the background infinitely and polls the job database: implemented in mon
 | MONTHLYPLAYLIST     | Gets the list of all playlists (Table 4) running on a monthly interval |
 | WEEKLYPLAYLIST      |             |
 | DAILYPLAYLIST       |             |
-| SIMILAR             |             |
+| SIMILAR             | Gets the list of all tracked artists and checks the presences of the musicbrainz id |
 | USERNAMERESOLVER    |             |
 | EVENT               |             |
 | DATA                |             |
