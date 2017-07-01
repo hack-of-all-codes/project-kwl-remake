@@ -46,3 +46,8 @@ Runs in the background infinitely and polls the job database: implemented in mon
 | Attribute           | Type                | Description  |
 | ------------------- |:-------------------:| -------------|
 | id                  | ObjectId            |              |
+| name                | String              |              |
+| description         | String              |              |
+| params              | Map<String,String>  |              |
+| tracked             | Boolean             |              |
+| interval            | String              | DAY, WEEK, MONTH, QUARTER, SEMESTER, ANNUAL |
