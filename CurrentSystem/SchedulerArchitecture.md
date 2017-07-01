@@ -5,7 +5,7 @@ Runs in the background infinitely and polls the job database: implemented in mon
 
 ###### Table 1: Job Collection
 | Attribute         | Type                | Description         |
-| ----------------- |:-------------------:| -------------------:|
+| ----------------- |:-------------------:| --------------------|
 | id                | ObjectId            | Mongo Id            |
 | name              | String              | Human-friendly name |
 | jobType           | String              |                     |
@@ -29,7 +29,7 @@ Runs in the background infinitely and polls the job database: implemented in mon
 
 ###### Table 3: Chart Collection
 | Attribute           | Type                | Description  |
-| ------------------- |:-------------------:| ------------:|
+| ------------------- |:-------------------:| -------------|
 | id                  | ObjectId            |              |
 | channel             | String              |              |
 | description         | String              |              |
