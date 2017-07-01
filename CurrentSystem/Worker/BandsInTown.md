@@ -15,7 +15,10 @@ Using the MBID of the artists, we can fetch the latest events
 | datetime        | String  |               |
 | title           | String  |               |
 | venue           | Venue   |               |
-| Venue |
+
+###### Venue
+| Attribute       | Type    | Description   |
+| --------------- | ------- | ------------- |
 | id | |
 | city | |
 | name | |
