@@ -17,9 +17,9 @@ Runs in the background infinitely and polls the job database: implemented in mon
 | Job Type            | Description | 
 | ------------------- | ----------- |
 | ARTIST              | Gets the list of ALL tracked artists and harvests the missing values for their referenceEntries using the job queue|
-| MONTHLYCHART        | Gets the list of all charts running on a monthly time interval, and creates a new job in the queue |
+| MONTHLYCHART        | Gets the list of all charts (Table 3) running on a monthly time interval, and creates a new job in the queue |
 | WEEKLYCHART         | Gets the list of all charts running on a monthly time interval, and creates a new job in the queue |
-| MONTHLYPLAYLIST     |             |
+| MONTHLYPLAYLIST     | Gets the list of all playlists (Table 4) running on a monthly interval |
 | WEEKLYPLAYLIST      |             |
 | DAILYPLAYLIST       |             |
 | SIMILAR             |             |
@@ -41,3 +41,8 @@ Runs in the background infinitely and polls the job database: implemented in mon
 | type                | String              | VIDEO, STREAMING, AUDIO, RADIO, TEXT |
 | purpose             | List<String>        |              |
 | interval            | String              | DAY, WEEK, MONTH, QUARTER, SEMESTER, ANNUAL |
+
+###### Table 4: Playlist Collection
+| Attribute           | Type                | Description  |
+| ------------------- |:-------------------:| -------------|
+| id                  | ObjectId            |              |
