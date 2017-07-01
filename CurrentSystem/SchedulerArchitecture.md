@@ -18,7 +18,7 @@ Runs in the background infinitely and polls the job database: implemented in mon
 
 | Job Type            | Description | 
 | ------------------- | ----------- |
-| ARTIST              |             |
+| ARTIST              | Gets the list of ALL tracked artists and harvests the missing values for their referenceEntries using the job queue|
 | MONTHLYCHART        |             |
 | WEEKLYCHART         |             |
 | MONTHLYPLAYLIST     |             |
