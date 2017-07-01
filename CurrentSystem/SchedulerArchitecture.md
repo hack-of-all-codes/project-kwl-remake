@@ -1,5 +1,5 @@
 # Architecture: The Scheduler
-A backend system for running scheduled task
+A backend system for scheduling worker tasks
 
 Runs in the background infinitely and polls the job database: implemented in mongo and modifiable by adminitrators
 
