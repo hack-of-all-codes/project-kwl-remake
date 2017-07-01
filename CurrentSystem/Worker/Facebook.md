@@ -1,4 +1,5 @@
 # Worker Subsystem: Facebook Insights
+Uses both the web crawler and official facebook graph api
 
 https://graph.facebook.com/v2.7/10092511675/insights/page_storytellers_by_country?access_token=xxx_app_id__xxxx|xx_appsecret_xxxx
 ```json
