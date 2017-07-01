@@ -11,10 +11,10 @@ Public ------ KWL360 Dashboard
                     | |                                                       |
                     | |                                                       |
                     | |                                                       |
-                    | |                           |---Data Processor          |
-                    | |                           |      |                    |
-                    | |                           |      |                    |
-                    | |                           |      |                    |
+                    | | |------ Elastic Search----|---Data Processor          |
+                    | | |                         |      |                    |
+                    | | |                         |      |                    |
+                    | | |                         |      |                    |
                     | | |------------------- Postgres    ||----------------- Worker -------------- Spider --------- External Websites
                     | | |                                ||                    |
                     | | | |----------------- Braintree   ||                    |-------------------|
