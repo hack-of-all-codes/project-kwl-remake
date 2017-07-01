@@ -25,7 +25,7 @@ Runs in the background infinitely and polls the job database: implemented in mon
 | SIMILAR             | Gets the list of all tracked artists and checks the presences of the musicbrainz id |
 | USERNAMERESOLVER    |             |
 | EVENT               | Gets the list of all tracked artist and checks for events from various social media / reference entries |
-| DATA                |             |
+| DATA                | Starts data processing/ETL for a specified date |
 
 ###### Table 3: Chart Collection
 | Attribute           | Type                | Description  |
