@@ -4,7 +4,7 @@
 ```
 
 
-Public ------ KWL360 Dashboard      
+Public ------ KWL360 Dashboard (Web Frontend)     
                     | 
                     | |------------------------------------------------Facebook API
                     | |                                                       |
@@ -26,7 +26,7 @@ Public ------ KWL360 Dashboard
                     |                          |---------------------------------------------------|  
                     |                   
                     | 
-Admin ------ Admin Dashboard
+Admin ------ Admin Dashboard (Web Frontend)     
 
 
 ```
