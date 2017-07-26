@@ -1,0 +1,104 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Livy Experiments",
+		"_postman_id": "8fbfeaa4-44ac-4214-d7b4-47573ef5bb14",
+		"description": "Livy, a REST API Server for executing Spark Jobs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Sessions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Successful Login\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{livyHost}}/sessions",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\": \"{{adminUser}}\",\n\"password\": \"{{adminPassword}}\",\n\"rememberMe\": true\n}"
+				},
+				"description": "Get all active sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Batch Jobs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Successful Login\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{livyHost}}/batches",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\": \"{{adminUser}}\",\n\"password\": \"{{adminPassword}}\",\n\"rememberMe\": true\n}"
+				},
+				"description": "Get all active sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Batch Job",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Successful Create\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{livyHost}}/batches",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"file\": \"hdfs://user/admin/spark-scala-poc-assembly-1.0.jar\",\n    \"files\": [\"hdfs://user/admin/spark-scala-poc-assembly-1.0.jar\"],\n    \"className\": \"com.kwl2.poc.sparkscala.Main\",\n    \"conf\": {\n    \t\"master\": \"yarn\"\n    }\n}"
+				},
+				"description": "Get all active sessions"
+			},
+			"response": []
+		}
+	]
+}
