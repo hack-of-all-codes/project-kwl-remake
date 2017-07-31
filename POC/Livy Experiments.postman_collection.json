@@ -94,7 +94,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Demo Deployment\",\n    \"file\": \"hdfs://ec2-34-209-76-48.us-west-2.compute.amazonaws.com:/user/admin/spark-scala-poc-assembly-1.0.jar\",\n    \"args\": [\"hdfs://ec2-34-209-76-48.us-west-2.compute.amazonaws.com:/user/admin/shakespeare.txt\", \"hdfs://ec2-34-209-76-48.us-west-2.compute.amazonaws.com:/user/livy/shakespeareWordCount\"],\n    \"files\": [\"hdfs://user/admin/spark-scala-poc-assembly-1.0.jar\"],\n    \"jars\": [\"hdfs://user/admin/spark-scala-poc-assembly-1.0.jar\"],\n    \"className\": \"com.kwl2.poc.sparkscala.Main\",\n    \"conf\": {\n    \t\"master\": \"yarn\"\n    }\n}"
+					"raw": "{\n    \"file\": \"hdfs:///user/admin/spark-scala-poc-assembly-1.0.jar\",\n    \"className\": \"com.kwl2.poc.sparkscala.Main\",\n\t\"args\": [\"hdfs:///user/admin/shakespeare.txt\", \"hdfs:///user/livy/shakespeareWordCount2\"]\n}"
 				},
 				"description": "Get all active sessions"
 			},
