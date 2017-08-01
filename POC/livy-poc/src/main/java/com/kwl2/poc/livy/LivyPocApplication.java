@@ -32,7 +32,7 @@ public class LivyPocApplication {
 	    return (args) -> {
 
             System.out.println("Uploading...");
-	        livyClient.addJar(new URI("hdfs:///user/admin/spark-scala-poc-assembly-1.0.jar"));
+	        livyClient.addJar(new URI("hdfs:///user/admin/livy-poc-0.0.1-SNAPSHOT-jar-with-dependencies.jar"));
 
 	        double pi = livyClient.submit(new PiJob(10)).get();
 	        System.out.println("Pi is:" + pi);
