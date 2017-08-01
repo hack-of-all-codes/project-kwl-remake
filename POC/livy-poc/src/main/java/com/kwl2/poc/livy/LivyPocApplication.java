@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -22,13 +23,17 @@ public class LivyPocApplication {
 	}
 
 	@Bean
-	LivyClient livyClient(@Value("livy.host") String livyHost) throws IOException, URISyntaxException {
+	LivyClient livyClient(@Value("${livy.host}") String livyHost) throws IOException, URISyntaxException {
 		return new LivyClientBuilder().setURI(new URI(livyHost)).build();
 	}
 
 	@Bean
 	CommandLineRunner runner(@Autowired LivyClient livyClient) {
 	    return (args) -> {
+
+            System.out.println("Uploading...");
+	        livyClient.addJar(new URI("hdfs:///user/admin/spark-scala-poc-assembly-1.0.jar"));
+
 	        double pi = livyClient.submit(new PiJob(10)).get();
 	        System.out.println("Pi is:" + pi);
         };
