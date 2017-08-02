@@ -27,3 +27,7 @@ db.createUser({
 
 ## Notable Frameworks
 - [Spring for Hadoop](http://docs.spring.io/spring-hadoop/docs/2.5.0.RELEASE/reference/html/introduction.html)
+
+## Guides
+- [Spring HDFS](http://docs.spring.io/spring-hadoop/docs/current/reference/html/springandhadoop-fs.html)
+- [Spring for Hadoop Samples](https://github.com/spring-projects/spring-hadoop-samples)
