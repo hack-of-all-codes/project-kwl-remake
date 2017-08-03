@@ -22,7 +22,17 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+
+        <spring.hadoop.version>2.5.0.RELEASE</spring.hadoop.version>
 	</properties>
+
+	<!--<repositories>
+		<repository>
+			<id>spring-release</id>
+			<name>Spring Release Repository</name>
+			<url>http://repo.spring.io/libs-release</url>
+		</repository>
+	</repositories>-->
 
 	<dependencies>
 		<dependency>
@@ -55,8 +65,14 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-hadoop</artifactId>
+			<artifactId>spring-data-hadoop-boot</artifactId>
+            <version>${spring.hadoop.version}</version>
 		</dependency>
+		<!--<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-hadoop</artifactId>
+			<version>2.4.0.RELEASE-hdp24</version>
+		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
