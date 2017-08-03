@@ -31,3 +31,7 @@ db.createUser({
 ## Guides
 - [Spring HDFS](http://docs.spring.io/spring-hadoop/docs/current/reference/html/springandhadoop-fs.html)
 - [Spring for Hadoop Samples](https://github.com/spring-projects/spring-hadoop-samples)
+- [Hadoop: Hortonworks Data Platform](https://github.com/spring-projects/spring-hadoop/wiki/Build-with-Hortonworks-HDP-2.2)
+- [Spring Hadoop Config](http://docs.spring.io/autorepo/docs/spring-hadoop/current/reference/html/springandhadoop-config.html)
+- [Secured HDFS Access Using Knox and Ranger](https://hortonworks.com/hadoop-tutorial/manage-security-policy-hive-hbase-knox-ranger/)
+- [WebHDFS](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html)
