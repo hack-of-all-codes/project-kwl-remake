@@ -35,3 +35,4 @@ db.createUser({
 - [Spring Hadoop Config](http://docs.spring.io/autorepo/docs/spring-hadoop/current/reference/html/springandhadoop-config.html)
 - [Secured HDFS Access Using Knox and Ranger](https://hortonworks.com/hadoop-tutorial/manage-security-policy-hive-hbase-knox-ranger/)
 - [WebHDFS](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html)
+- [Mounting NFS](https://hortonworks.com/blog/how-to-enable-nfs-access-to-hdfs-in-hortonworks-sandbox/)
