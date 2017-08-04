@@ -1,4 +1,4 @@
-# iTunes Data Harvester
+# iTunes Data Harvester (TEMPORARILY SUSPENDING DEVELOPMENT)
 Harvester microservice for harvesting from iTunes Relational Data to HDFS
 
 ## Data Flow
