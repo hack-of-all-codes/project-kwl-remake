@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Entity;
+
 /**
  * Many-to-many relationship between artists and songs.
  * Only primary artists are included.
@@ -13,6 +15,7 @@ import lombok.ToString;
  * One artist can participate in multiple songs.
  */
 @Data
+@Entity
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor

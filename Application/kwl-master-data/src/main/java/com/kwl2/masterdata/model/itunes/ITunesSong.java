@@ -5,11 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Entity;
+
 /**
  * Song metadata. In most cases, one song is only contained in one collection.
  * But in some cases, one song is shared by multiple collections.
  */
 @Data
+@Entity
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor

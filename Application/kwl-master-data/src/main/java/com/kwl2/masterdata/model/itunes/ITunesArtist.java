@@ -5,12 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Entity;
+
 /**
  * Artist metadata.
  * Unlike other Content and Join tables,
  * this artist table contains all the artists,
  * regardless of availability of the artist’s contents in any given country of interest.
  */
+@Entity
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
