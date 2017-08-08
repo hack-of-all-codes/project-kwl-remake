@@ -15,6 +15,18 @@ db.createUser({
     }]
 })
 ```
+- create posgresql user and database
+```sql
+CREATE ROLE kwl2 PASSWORD 'kwl2password' VALID UNTIL 'infinity';
+ALTER ROLE kwl2 WITH LOGIN;
+
+CREATE DATABASE kwl2
+  WITH ENCODING='UTF8'
+       OWNER=kwl2
+       CONNECTION LIMIT=-1
+       TABLESPACE=pg_default;
+
+```
 
 
 ## Useful Guides
