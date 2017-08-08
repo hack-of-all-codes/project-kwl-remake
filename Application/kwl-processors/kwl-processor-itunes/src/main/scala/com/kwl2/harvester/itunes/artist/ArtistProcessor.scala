@@ -13,8 +13,6 @@ object ArtistProcessor {
       .appName("Artist Processor V1")
       .getOrCreate()
 
-    import org.apache.spark.sql._
-
     case class ITunesArtist(
                              id: Option[Long],
                              export_date: Long,
@@ -27,15 +25,12 @@ object ArtistProcessor {
                              view_url: String)
 
     val artistItunesHDFS = spark.read.textFile(args(0)).filter(!_.startsWith("#")).flatMap(value => {
-      val s = value.split("\u0001")
-      //Row("export_mode", "EE")
-      //(s(0), s(1), s(2))
+      val s = value.replace("\u0000", "").split("\u0001")
       try {
-        Some(ITunesArtist(None, s(0).toLong, "FULL", s(1).toLong, s(6).toLong, s(4).toBoolean, s(2), s(3), s(5)))
+        Some(ITunesArtist(None, s(0).toLong, "FULL", s(1).toLong, s(3).toLong, s(5).equals("1"), s(2), "", s(4)))
       } catch {
-        case e: Exception => None
+        case _: Exception => None
       }
-
     })
     artistItunesHDFS.show()
 
