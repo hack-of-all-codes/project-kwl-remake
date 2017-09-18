@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
+import java.util.Map;
 
 @RestController
 @RequestMapping("metric/fans")
@@ -18,6 +19,15 @@ public class FansMetricController {
 
     @Autowired
     FactFansMapper factFansMapper;
+
+    @RequestMapping(path= "/m", method = RequestMethod.GET)
+    public PagedResources<Map<String, Object>> showAllM() {
+        Collection<Map<String, Object>> fansmetrics = factFansMapper.findByDateM(20170809, 20);
+
+        PagedResources.PageMetadata meta = new PagedResources.PageMetadata(100, 100, 100 , 20);
+
+        return new PagedResources<>(fansmetrics, meta, new Link("http://localhost:17081/metric/fans"));
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public PagedResources<FactFans> showAll() {
