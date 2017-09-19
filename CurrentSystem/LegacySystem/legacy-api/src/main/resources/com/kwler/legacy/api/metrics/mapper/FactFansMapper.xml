@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kwler.legacy.api.metrics.mapper.FactFansMapper">
+
+    <select id="findArtists" resultMap="artistResults">
+        SELECT
+            count(*) OVER() AS total_count,
+            id AS artists_id,
+            name AS artists_name
+        FROM dim_artist LIMIT #{limit}
+    </select>
+    <resultMap id="artistResults" type="ArtistResults">
+        <result property="totalCount" column="total_count"/>
+        <collection property="artists" ofType="com.kwler.legacy.api.metrics.model.DimArtists">
+            <id property="id" column="artists_id"/>
+            <result property="name" column="artists_name"/>
+        </collection>
+    </resultMap>
+
+</mapper>

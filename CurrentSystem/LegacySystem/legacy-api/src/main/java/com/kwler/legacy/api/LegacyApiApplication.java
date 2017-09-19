@@ -1,6 +1,6 @@
 package com.kwler.legacy.api;
 
-import com.kwler.legacy.api.metrics.repository.FactFansMapper;
+import com.kwler.legacy.api.metrics.mapper.FactFansMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,6 +18,6 @@ public class LegacyApiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... strings) throws Exception {
-		System.out.println(factFansMapper.findByDate(20170809, 10));
+		System.out.println(factFansMapper.findArtists(3));
 	}
 }

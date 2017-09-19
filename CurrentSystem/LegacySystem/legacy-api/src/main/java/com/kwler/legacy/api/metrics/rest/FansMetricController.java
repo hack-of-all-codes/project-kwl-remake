@@ -1,7 +1,7 @@
 package com.kwler.legacy.api.metrics.rest;
 
 import com.kwler.legacy.api.metrics.model.FactFans;
-import com.kwler.legacy.api.metrics.repository.FactFansMapper;
+import com.kwler.legacy.api.metrics.mapper.FactFansMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.PagedResources;
