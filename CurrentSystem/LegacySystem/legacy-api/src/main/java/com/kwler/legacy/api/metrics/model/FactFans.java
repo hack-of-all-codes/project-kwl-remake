@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class FactFans {
 
+    Long id;
     Long fanCount;
     Long fanGrowthLast1D;
 }

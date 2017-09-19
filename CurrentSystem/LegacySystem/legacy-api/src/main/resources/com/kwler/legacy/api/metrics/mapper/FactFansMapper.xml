@@ -12,10 +12,31 @@
     </select>
     <resultMap id="artistResults" type="ArtistResults">
         <result property="totalCount" column="total_count"/>
-        <collection property="artists" ofType="com.kwler.legacy.api.metrics.model.DimArtists">
+        <collection property="artists" ofType="DimArtists">
             <id property="id" column="artists_id"/>
             <result property="name" column="artists_name"/>
         </collection>
+    </resultMap>
+
+    <select id="findFansByDateAndArtistId" resultMap="mapFactFans">
+        SELECT
+          count(*) OVER() AS total,
+          id,
+          fan_count
+        FROM fact_fans
+        WHERE artist_id = (SELECT id FROM dim_artist WHERE artist_id = #{artist} LIMIT 1)
+            AND date_id = #{date}
+        LIMIT #{page.pageSize}
+        OFFSET #{page.offset}
+    </select>
+    <resultMap id="mapFindFansByDateAndArtistId" type="org.springframework.data.domain.PageImpl">
+        <constructor>
+            <arg resultMap="mapFactFans" javaType="java.util.List"/>
+        </constructor>
+    </resultMap>
+    <resultMap id="mapFactFans" type="FactFans">
+        <id property="id" column="id"/>
+        <result property="fanCount" column="fan_count"/>
     </resultMap>
 
 </mapper>
