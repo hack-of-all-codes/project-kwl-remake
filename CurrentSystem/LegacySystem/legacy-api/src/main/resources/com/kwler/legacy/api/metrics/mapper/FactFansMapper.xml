@@ -3,24 +3,9 @@
 
 <mapper namespace="com.kwler.legacy.api.metrics.mapper.FactFansMapper">
 
-    <select id="findArtists" resultMap="artistResults">
+    <select id="findFansByDateAndArtistId" resultMap="mapFindFansByDateAndArtistId">
         SELECT
-            count(*) OVER() AS total_count,
-            id AS artists_id,
-            name AS artists_name
-        FROM dim_artist LIMIT #{limit}
-    </select>
-    <resultMap id="artistResults" type="ArtistResults">
-        <result property="totalCount" column="total_count"/>
-        <collection property="artists" ofType="DimArtists">
-            <id property="id" column="artists_id"/>
-            <result property="name" column="artists_name"/>
-        </collection>
-    </resultMap>
-
-    <select id="findFansByDateAndArtistId" resultMap="mapFactFans">
-        SELECT
-          count(*) OVER() AS total,
+          count(*) OVER() AS count,
           id,
           fan_count
         FROM fact_fans
@@ -29,10 +14,9 @@
         LIMIT #{page.pageSize}
         OFFSET #{page.offset}
     </select>
-    <resultMap id="mapFindFansByDateAndArtistId" type="org.springframework.data.domain.PageImpl">
-        <constructor>
-            <arg resultMap="mapFactFans" javaType="java.util.List"/>
-        </constructor>
+    <resultMap id="mapFindFansByDateAndArtistId" type="PartialResult">
+        <result property="count" column="count" />
+        <collection property="contents" resultMap="mapFactFans" />
     </resultMap>
     <resultMap id="mapFactFans" type="FactFans">
         <id property="id" column="id"/>
