@@ -1,8 +1,7 @@
 package com.kwler.legacy.api;
 
-import com.kwler.legacy.api.metrics.mapper.FactFansMapper;
-import com.kwler.legacy.api.metrics.model.FactFans;
-import com.kwler.legacy.api.metrics.model.PartialResult;
+import com.kwler.legacy.api.metrics.dao.FactFanDAO;
+import com.kwler.legacy.api.metrics.mapper.FactFanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,12 +16,14 @@ public class LegacyApiApplication implements CommandLineRunner {
 	}
 
 	@Autowired
-	FactFansMapper factFansMapper;
+    FactFanMapper factFanMapper;
+
+	@Autowired
+    FactFanDAO factFanDAO;
 
 	@Override
 	public void run(String... strings) throws Exception {
-		PageRequest page = new PageRequest(0, 2);
-		PartialResult<FactFans> result = factFansMapper.findFansByDateAndArtistId(20170807, "577a3d1c1669bd37321b2c29", page);
-		System.out.println(result);
+		PageRequest page = new PageRequest(1, 3);
+		System.out.println(factFanDAO.findByArtistAndDate("577a3d1c1669bd37321b2c29", 20170807, page));
 	}
 }
