@@ -1,4 +1,4 @@
-package com.kwler.legacy.api.metrics.dao;
+package com.kwler.legacy.api.metrics.repository;
 
 import com.kwler.legacy.api.metrics.mapper.FactFanMapper;
 import com.kwler.legacy.api.metrics.model.FactFan;
@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class FactFanDAO {
+public class FactFanRepository {
 
     @Autowired
     FactFanMapper factFanMapper;

@@ -1,6 +1,6 @@
 package com.kwler.legacy.api.metrics.rest;
 
-import com.kwler.legacy.api.metrics.dao.FactFanDAO;
+import com.kwler.legacy.api.metrics.repository.FactFanRepository;
 import com.kwler.legacy.api.metrics.model.FactFan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,7 +23,7 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 public class FansMetricController {
 
     @Autowired
-    FactFanDAO factFanDAO;
+    FactFanRepository factFanRepository;
 
     @RequestMapping(method = RequestMethod.GET)
     public PagedResources<FactFan> findByArtistAndDate(
@@ -32,7 +32,7 @@ public class FansMetricController {
             @RequestParam("page") Integer page,
             @RequestParam("size") Integer size) {
 
-        Page<FactFan> result = factFanDAO.findByArtistAndDate(artist, date, new PageRequest(page, size));
+        Page<FactFan> result = factFanRepository.findByArtistAndDate(artist, date, new PageRequest(page, size));
         PagedResources.PageMetadata meta = new PagedResources.PageMetadata(result.getSize(), result.getNumber(), result.getTotalElements());
 
         List<Link> links = new LinkedList<>();
