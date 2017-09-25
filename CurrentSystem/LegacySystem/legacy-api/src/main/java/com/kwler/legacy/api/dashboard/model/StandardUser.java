@@ -8,11 +8,13 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Document(collection = "user")
-@NoArgsConstructor @AllArgsConstructor
 public class StandardUser {
 
     @Id
@@ -21,7 +23,8 @@ public class StandardUser {
     UserAccount userAccount;
     UserProfile userProfile;
 
-    @Data @NoArgsConstructor
+    @Data
+    @NoArgsConstructor
     public static class UserAccount {
 
         String hashedPassword;
@@ -30,28 +33,32 @@ public class StandardUser {
         String passwordResetCode;
         Long passwordResetCodeExpiry;
         Type type;
+        Date registerDate;
 
-        @Data @NoArgsConstructor
-        public class Role {
+        @Data
+        @NoArgsConstructor
+        class Role {
             RoleName roleName;
         }
 
-        @Data @NoArgsConstructor
-        public class PersistentToken {
+        @Data
+        @NoArgsConstructor
+        class PersistentToken {
             String id;
             Long expiry;
         }
 
-        enum Type {
+        public enum Type {
             STANDARD, INTERNAL
         }
 
-        enum RoleName {
+        public enum RoleName {
             ADMIN, SELF, DEFAULT, SERVER
         }
     }
 
-    @Data @NoArgsConstructor
+    @Data
+    @NoArgsConstructor
     public static class UserProfile {
         String fullName;
         String email;
