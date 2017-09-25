@@ -8,34 +8,33 @@ import com.kwler.legacy.api.dashboard.repository.CustomerRestRepository;
 import com.kwler.legacy.api.dashboard.repository.StandardUserRestRepository;
 import com.kwler.legacy.api.dashboard.repository.UserRegistrationRestRepository;
 import com.kwler.legacy.api.security.BCryptPasswordEncoder;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 
 @Service
+@FieldDefaults(makeFinal=true, level= AccessLevel.PRIVATE)
+@AllArgsConstructor
+@Log
 public class UserRegistrationService {
 
-    @Autowired
     StandardUserRestRepository standardUserRestRepository;
-
-    @Autowired
     UserRegistrationRestRepository userRegistrationRestRepository;
-
-    @Autowired
     BCryptPasswordEncoder passwordEncoder;
-
-    @Autowired
     CustomerRestRepository customerRestRepository;
 
     /**
      *
-     * @param registration
-     * @return
+     * @param registration a user registration
+     * @return the newly-created user
      */
     public StandardUser register(Registration registration) {
+        log.info("registration: " + registration);
 
         StandardUser user = new StandardUser();
 

@@ -2,16 +2,19 @@ package com.kwler.legacy.api.security;
 
 import com.kwler.legacy.api.dashboard.model.StandardUser;
 import com.kwler.legacy.api.dashboard.repository.StandardUserRestRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
+@FieldDefaults(makeFinal=true, level= AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class StandardUserDetailsService implements UserDetailsService {
 
-    @Autowired
     StandardUserRestRepository standardUserRestRepository;
 
     @Override

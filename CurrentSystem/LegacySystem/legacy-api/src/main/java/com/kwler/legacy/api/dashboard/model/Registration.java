@@ -12,7 +12,6 @@ public class Registration {
 
     String email;
     String password;
-    boolean isTermsAccepted;
     Country country;
     String fullName;
     String industryRole;
