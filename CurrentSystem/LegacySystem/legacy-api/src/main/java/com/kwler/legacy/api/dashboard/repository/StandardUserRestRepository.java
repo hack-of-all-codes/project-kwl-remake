@@ -11,4 +11,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface StandardUserRestRepository extends MongoRepository<StandardUser, String> {
 
     Page<StandardUser> findByUserProfileEmail(@Param("email") String email, Pageable var1);
+    StandardUser findFirstByUserProfileEmail(@Param("email") String email);
 }

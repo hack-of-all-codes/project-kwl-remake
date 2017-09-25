@@ -6,56 +6,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Document(collection = "user")
 @NoArgsConstructor @AllArgsConstructor
-public class StandardUser implements UserDetails {
+public class StandardUser {
 
     @Id
     String id;
 
     UserAccount userAccount;
     UserProfile userProfile;
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList();
-    }
-
-    @Override
-    public String getPassword() {
-        return userAccount.getHashedPassword();
-    }
-
-    @Override
-    public String getUsername() {
-        return userProfile.getEmail();
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
 
     @Data @NoArgsConstructor
     public static class UserAccount {
