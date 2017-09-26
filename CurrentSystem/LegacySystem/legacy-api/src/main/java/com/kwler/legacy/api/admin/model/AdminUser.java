@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "admin")
+@Document(collection = "adminV2")
 public class AdminUser {
 
     @Id
@@ -23,7 +23,7 @@ public class AdminUser {
 
     @Data
     @NoArgsConstructor
-    static class UserAccount {
+    public static class UserAccount {
 
         String hashedPassword;
         List<UserAccount.PersistentToken> persistentTokens;
@@ -57,7 +57,7 @@ public class AdminUser {
 
     @Data
     @NoArgsConstructor
-    static class UserProfile {
+    public static class UserProfile {
         String fullName;
         String email;
         String name;

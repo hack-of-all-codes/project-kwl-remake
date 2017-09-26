@@ -1,6 +1,6 @@
 package com.kwler.legacy.api.security;
 
-import com.kwler.legacy.api.admin.model.StandardUser;
+import com.kwler.legacy.api.admin.model.AdminUser;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -8,39 +8,28 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 @AllArgsConstructor
-public class KWLStandardUserDetails implements UserDetails {
+public class KWLAdminUserDetails implements UserDetails {
 
-    private final StandardUser standardUser;
-
-    private static final Collection<? extends GrantedAuthority> standardAuthorities = Arrays.asList(
-            new SimpleGrantedAuthority("ROLE_USER"),
-            new SimpleGrantedAuthority("ROLE_STANDARD")
-    );
+    private final AdminUser adminUser;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (getUsername().equalsIgnoreCase("oat@meal.com")) {
-            return Arrays.asList(
-                    new SimpleGrantedAuthority("ROLE_USER"),
-                    new SimpleGrantedAuthority("ROLE_STANDARD"),
-                    new SimpleGrantedAuthority("ROLE_ADMIN")
-            );
-        }
-
-        return standardAuthorities;
+        return Arrays.asList(
+                new SimpleGrantedAuthority("ROLE_USER"),
+                new SimpleGrantedAuthority("ROLE_ADMIN")
+        );
     }
 
     @Override
     public String getPassword() {
-        return standardUser.getUserAccount().getHashedPassword();
+        return adminUser.getUserAccount().getHashedPassword();
     }
 
     @Override
     public String getUsername() {
-        return standardUser.getUserProfile().getEmail();
+        return adminUser.getUserProfile().getEmail();
     }
 
     @Override
@@ -62,5 +51,4 @@ public class KWLStandardUserDetails implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
 }

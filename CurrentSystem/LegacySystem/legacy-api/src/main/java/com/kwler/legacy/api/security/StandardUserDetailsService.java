@@ -1,6 +1,8 @@
 package com.kwler.legacy.api.security;
 
+import com.kwler.legacy.api.admin.model.AdminUser;
 import com.kwler.legacy.api.admin.model.StandardUser;
+import com.kwler.legacy.api.admin.repository.AdminUserRestRepository;
 import com.kwler.legacy.api.admin.repository.StandardUserRestRepository;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -16,9 +18,13 @@ import org.springframework.stereotype.Service;
 public class StandardUserDetailsService implements UserDetailsService {
 
     StandardUserRestRepository standardUserRestRepository;
+    AdminUserRestRepository adminUserRestRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        AdminUser adminUser = adminUserRestRepository.findFirstByUserProfileEmail(username);
+        if (adminUser != null) return new KWLAdminUserDetails(adminUser);
+
         StandardUser user = standardUserRestRepository.findFirstByUserProfileEmail(username);
         if (user == null) throw new UsernameNotFoundException("user does not exist: " + username);
         return new KWLStandardUserDetails(user);
