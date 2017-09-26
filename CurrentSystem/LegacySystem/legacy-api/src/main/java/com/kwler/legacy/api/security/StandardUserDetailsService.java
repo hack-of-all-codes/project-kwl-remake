@@ -1,7 +1,7 @@
 package com.kwler.legacy.api.security;
 
-import com.kwler.legacy.api.dashboard.model.StandardUser;
-import com.kwler.legacy.api.dashboard.repository.StandardUserRestRepository;
+import com.kwler.legacy.api.admin.model.StandardUser;
+import com.kwler.legacy.api.admin.repository.StandardUserRestRepository;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;

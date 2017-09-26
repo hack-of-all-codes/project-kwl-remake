@@ -1,4 +1,4 @@
-package com.kwler.legacy.api.dashboard.model;
+package com.kwler.legacy.api.admin.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * data for the paying customer
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

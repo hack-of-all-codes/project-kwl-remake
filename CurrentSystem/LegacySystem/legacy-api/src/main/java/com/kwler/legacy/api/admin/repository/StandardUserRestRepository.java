@@ -1,6 +1,6 @@
-package com.kwler.legacy.api.dashboard.repository;
+package com.kwler.legacy.api.admin.repository;
 
-import com.kwler.legacy.api.dashboard.model.StandardUser;
+import com.kwler.legacy.api.admin.model.StandardUser;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;

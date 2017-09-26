@@ -1,21 +1,19 @@
-package com.kwler.legacy.api.dashboard.model;
+package com.kwler.legacy.api.admin.model;
 
-import com.kwler.legacy.api.masterdata.model.Country;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "userV2")
-public class StandardUser {
+@Document(collection = "admin")
+public class AdminUser {
 
     @Id
     String id;
@@ -25,20 +23,20 @@ public class StandardUser {
 
     @Data
     @NoArgsConstructor
-    public static class UserAccount {
+    static class UserAccount {
 
         String hashedPassword;
-        List<PersistentToken> persistentTokens;
-        List<Role> roles;
+        List<UserAccount.PersistentToken> persistentTokens;
+        List<UserAccount.Role> roles;
         String passwordResetCode;
         Long passwordResetCodeExpiry;
-        Type type;
+        UserAccount.Type type;
         Date registerDate;
 
         @Data
         @NoArgsConstructor
         class Role {
-            RoleName roleName;
+            UserAccount.RoleName roleName;
         }
 
         @Data
@@ -59,26 +57,16 @@ public class StandardUser {
 
     @Data
     @NoArgsConstructor
-    public static class UserProfile {
+    static class UserProfile {
         String fullName;
         String email;
         String name;
-        Gender gender;
-        Country country;
-        List<String> recentlyViewedArtists;
+        UserProfile.Gender gender;
         String facebookId;
-        String linkedInId;
-        String customerId;
-        List<String> viewedReleaseUpdate = new ArrayList<>();
-        Boolean enabled;
-        Boolean onBoarded = false;
-        Boolean needsVerification;
-        String verificationCode;
-        Long verificationCodeExpiry;
-        String industryRole;
 
         enum Gender {
             M, F
         }
     }
+
 }

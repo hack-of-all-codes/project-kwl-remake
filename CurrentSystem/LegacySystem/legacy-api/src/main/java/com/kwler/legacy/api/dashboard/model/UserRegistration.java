@@ -1,5 +1,6 @@
 package com.kwler.legacy.api.dashboard.model;
 
+import com.kwler.legacy.api.admin.model.StandardUser;
 import com.kwler.legacy.api.masterdata.model.Country;
 import lombok.AllArgsConstructor;
 import lombok.Data;

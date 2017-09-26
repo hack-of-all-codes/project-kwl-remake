@@ -1,11 +1,11 @@
 package com.kwler.legacy.api.dashboard.service;
 
-import com.kwler.legacy.api.dashboard.model.Customer;
+import com.kwler.legacy.api.admin.model.Customer;
 import com.kwler.legacy.api.dashboard.model.Registration;
-import com.kwler.legacy.api.dashboard.model.StandardUser;
+import com.kwler.legacy.api.admin.model.StandardUser;
 import com.kwler.legacy.api.dashboard.model.UserRegistration;
-import com.kwler.legacy.api.dashboard.repository.CustomerRestRepository;
-import com.kwler.legacy.api.dashboard.repository.StandardUserRestRepository;
+import com.kwler.legacy.api.admin.repository.CustomerRestRepository;
+import com.kwler.legacy.api.admin.repository.StandardUserRestRepository;
 import com.kwler.legacy.api.dashboard.repository.UserRegistrationRestRepository;
 import com.kwler.legacy.api.security.BCryptPasswordEncoder;
 import lombok.AccessLevel;

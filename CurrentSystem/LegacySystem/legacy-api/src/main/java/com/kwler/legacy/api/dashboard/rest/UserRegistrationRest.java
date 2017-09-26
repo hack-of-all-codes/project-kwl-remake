@@ -1,7 +1,7 @@
 package com.kwler.legacy.api.dashboard.rest;
 
 import com.kwler.legacy.api.dashboard.model.Registration;
-import com.kwler.legacy.api.dashboard.model.StandardUser;
+import com.kwler.legacy.api.admin.model.StandardUser;
 import com.kwler.legacy.api.dashboard.service.UserRegistrationService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(path = "registration")
+@RequestMapping(path = "/registration")
 @FieldDefaults(makeFinal=true, level= AccessLevel.PRIVATE)
 @AllArgsConstructor
-public class UserRegistrationApi {
+public class UserRegistrationRest {
 
     UserRegistrationService service;
 
