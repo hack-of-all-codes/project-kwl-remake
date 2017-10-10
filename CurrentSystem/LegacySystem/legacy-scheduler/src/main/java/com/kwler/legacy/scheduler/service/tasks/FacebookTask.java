@@ -14,6 +14,6 @@ public class FacebookTask implements Task {
     @Override
     public TaskResult run(TaskContext context) {
 
-        return new TaskResult(context, true, Optional.empty(), Collections.emptyMap());
+        return new TaskResult(context, true, Optional.empty(), context.getStart(), Collections.emptyMap());
     }
 }

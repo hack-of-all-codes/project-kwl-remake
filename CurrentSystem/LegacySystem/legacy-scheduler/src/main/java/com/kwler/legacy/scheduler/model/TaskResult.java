@@ -11,5 +11,6 @@ public class TaskResult {
     TaskContext context;
     Boolean success;
     Optional<String> errorMessage;
+    Long runTime;
     Map<String, String> info;
 }
