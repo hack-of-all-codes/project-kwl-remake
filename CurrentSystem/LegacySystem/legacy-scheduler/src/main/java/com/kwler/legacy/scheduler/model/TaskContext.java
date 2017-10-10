@@ -3,7 +3,7 @@ package com.kwler.legacy.scheduler.model;
 import lombok.Value;
 
 @Value
-public class ScheduledContext {
+public class TaskContext {
 
     JobSchedule jobSchedule;
     Long start;

@@ -1,9 +1,13 @@
 package com.kwler.legacy.scheduler.service;
 
+import com.kwler.legacy.scheduler.model.JobHistory;
 import com.kwler.legacy.scheduler.model.JobSchedule;
-import com.kwler.legacy.scheduler.model.ScheduledContext;
+import com.kwler.legacy.scheduler.model.TaskContext;
+import com.kwler.legacy.scheduler.model.TaskResult;
 import com.kwler.legacy.scheduler.repository.JobHistoryRestRepository;
 import com.kwler.legacy.scheduler.repository.JobScheduleRestRepository;
+import com.kwler.legacy.scheduler.service.tasks.DefaultTask;
+import com.kwler.legacy.scheduler.service.tasks.FacebookTask;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -19,21 +23,42 @@ import java.util.List;
 @AllArgsConstructor
 public class Scheduler {
 
-    JobScheduleRestRepository jobScheduleRestRepository;
-    JobHistoryRestRepository jobHistoryRestRepository;
+    JobScheduleRestRepository scheduleRepository;
+    JobHistoryRestRepository historyRepository;
+
+    DefaultTask defaultTask;
+    FacebookTask facebookTask;
 
     @Scheduled(fixedDelay = 1000L*60)
     public void runJobs() {
 
-        List<JobSchedule> allSchedules = jobScheduleRestRepository.findAll();
+        List<JobSchedule> schedules = scheduleRepository.findAll();
+        Long currentTime = System.currentTimeMillis();
 
-        allSchedules.forEach(s -> {
-            ScheduledJobRunner runner = resolveRunner(s);
-            runner.run(new ScheduledContext(s, 1000l));
+        schedules.stream().filter(schedule->schedule.shouldRun(currentTime)).forEach(schedule ->  {
+            TaskResult result = resolveTask(schedule).run(new TaskContext(schedule, 1000l));
+            createHistory(result);
         });
     }
 
-    protected ScheduledJobRunner resolveRunner(JobSchedule schedule) {
-        return new FacebookJobInvoker();
+    /**
+     * TODO: implement
+     * @param schedule
+     * @return
+     */
+    protected Task resolveTask(JobSchedule schedule) {
+        switch (schedule.getJobType()) {
+            case HARVEST_FACEBOOK:
+                return facebookTask;
+            default:
+                return defaultTask;
+        }
+    }
+
+    protected JobHistory createHistory(TaskResult result) {
+        JobHistory history = new JobHistory();
+
+        historyRepository.save(history);
+        return history;
     }
 }
