@@ -19,8 +19,8 @@ import java.util.List;
 
 @Log
 @Service
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @AllArgsConstructor
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class Scheduler {
 
     JobScheduleRestRepository scheduleRepository;
@@ -31,6 +31,7 @@ public class Scheduler {
 
     @Scheduled(fixedDelay = 1000L * 60)
     public void runJobs() {
+        log.info("Looking for scheduled jobs...");
 
         List<JobSchedule> schedules = scheduleRepository.findAll();
         Long currentTime = System.currentTimeMillis();
@@ -57,8 +58,17 @@ public class Scheduler {
     }
 
     protected JobHistory createHistory(TaskResult result) {
-        JobHistory history = new JobHistory();
+        JobSchedule schedule = result.getContext().getJobSchedule();
+        schedule.setLastRun(result.getRunFinish());
 
+        JobHistory history = new JobHistory();
+        history.setJobScheduleId(schedule.getId());
+        history.setMessage(result.getErrorMessage().orElse("Successful Run"));
+        history.setInfo(result.getInfo());
+        history.setRunActual(result.getRunFinish());
+        history.setRunSchedule(result.getRunSchedule());
+
+        scheduleRepository.save(schedule);
         historyRepository.save(history);
         return history;
     }

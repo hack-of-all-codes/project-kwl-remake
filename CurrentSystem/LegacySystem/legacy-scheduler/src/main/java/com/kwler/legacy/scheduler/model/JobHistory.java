@@ -30,5 +30,8 @@ public class JobHistory {
 
     String message;
 
+    /**
+     * extra information for the job execution
+     */
     Map<String, String> info;
 }
