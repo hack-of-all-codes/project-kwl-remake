@@ -12,18 +12,16 @@ import static org.junit.Assert.assertTrue;
 public class JobScheduleTest {
 
     @Test
-    public void shouldRun() {
+    public void shouldRunWhenScheduled() {
+        Long march01 = new Date(2017, 02, 01).getTime();
+        Long march02 = new Date(2017, 02, 02, 0, 0, 1).getTime();
+        String runDailyCronExpression = "0 0 0 * * *";
+
         JobSchedule schedule = new JobSchedule();
-        schedule.setLastRunActual(1l);
-        schedule.setCronExpression("0 0 12 1/1 * ? *");
+        schedule.setLastRun(march01);
+        schedule.setCronExpression(runDailyCronExpression);
 
-        assertTrue(schedule.shouldRun(System.currentTimeMillis()));
-    }
-
-    @Test
-    public void demoCron() {
-        CronSequenceGenerator sequenceGenerator = new CronSequenceGenerator("10 0 4 1,7,15 * *");
-        log.info(String.format("=== %s", sequenceGenerator.next(new Date(System.currentTimeMillis()))));
+        assertTrue(schedule.shouldRun(march02));
     }
 
 }

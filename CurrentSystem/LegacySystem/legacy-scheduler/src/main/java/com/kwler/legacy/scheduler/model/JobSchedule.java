@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.scheduling.support.CronSequenceGenerator;
-import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.Map;
@@ -57,14 +56,15 @@ public class JobSchedule {
     Long lastRun;
 
     /**
-     * evaluate if this schedule should execute for this time
+     * evaluate if this schedule should execute this time
      *
      * @param time
      * @return
      */
-    public boolean shouldRun(long time) {
+    public Boolean shouldRun(long time) {
         if (!CronSequenceGenerator.isValidExpression(getCronExpression())) return false;
         CronSequenceGenerator sequenceGenerator = new CronSequenceGenerator(getCronExpression());
-        return sequenceGenerator.next(new Date(time)).getTime() > getLastRun();
+        return sequenceGenerator.next(new Date(lastRun)).getTime() < time;
     }
+
 }
