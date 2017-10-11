@@ -24,10 +24,16 @@ public class JobSchedule {
     String id;
 
     /**
+     * label for humans
+     */
+    String name;
+    String description;
+
+    /**
      * see:
      * http://www.manpagez.com/man/5/crontab/
      * http://www.cronmaker.com/
-     *
+     * <p>
      * The pattern is a list of six single space-separated fields: representing second, minute, hour, day, month, weekday.
      * Month and weekday names can be given as the first three letters of the English names.
      * "0 0 * * * *" = the top of every hour of every day.

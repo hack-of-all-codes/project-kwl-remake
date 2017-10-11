@@ -19,7 +19,7 @@ import java.util.List;
 
 @Log
 @Service
-@FieldDefaults(makeFinal=true, level= AccessLevel.PRIVATE)
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @AllArgsConstructor
 public class Scheduler {
 
@@ -29,13 +29,13 @@ public class Scheduler {
     DefaultTask defaultTask;
     FacebookTask facebookTask;
 
-    @Scheduled(fixedDelay = 1000L*60)
+    @Scheduled(fixedDelay = 1000L * 60)
     public void runJobs() {
 
         List<JobSchedule> schedules = scheduleRepository.findAll();
         Long currentTime = System.currentTimeMillis();
 
-        schedules.stream().filter(schedule->schedule.shouldRun(currentTime)).forEach(schedule ->  {
+        schedules.stream().filter(schedule -> schedule.shouldRun(currentTime)).forEach(schedule -> {
             TaskResult result = resolveTask(schedule).run(new TaskContext(schedule, currentTime));
             createHistory(result);
         });
@@ -43,6 +43,7 @@ public class Scheduler {
 
     /**
      * TODO: implement
+     *
      * @param schedule
      * @return
      */
