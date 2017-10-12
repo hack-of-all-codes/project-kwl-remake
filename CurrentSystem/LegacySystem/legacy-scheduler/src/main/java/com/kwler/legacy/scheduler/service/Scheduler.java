@@ -37,7 +37,10 @@ public class Scheduler {
         Long currentTime = System.currentTimeMillis();
 
         schedules.stream().filter(schedule -> schedule.shouldRun(currentTime)).forEach(schedule -> {
-            TaskResult result = resolveTask(schedule).run(new TaskContext(schedule, currentTime));
+            TaskResult result = resolveTask(schedule).run(TaskContext.builder()
+                    .jobSchedule(schedule)
+                    .start(currentTime).build());
+
             createHistory(result);
         });
     }

@@ -31,6 +31,14 @@ public class DefaultTask implements Task {
         Map<String, String> testInfo = new HashMap<>();
         testInfo.put("test", "test");
 
-        return new TaskResult(context, true, Optional.empty(), context.getStart(), start, end, testInfo);
+        return TaskResult.builder()
+                .context(context)
+                .success(true)
+                .errorMessage(Optional.empty())
+                .runSchedule(context.getStart())
+                .runStart(start)
+                .runFinish(end)
+                .info(testInfo)
+                .build();
     }
 }
