@@ -13,8 +13,6 @@ import java.util.Optional;
 
 @Service
 @Log
-//@AllArgsConstructor
-//@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class FacebookTask implements Task {
 
     @lombok.Value
@@ -34,7 +32,7 @@ public class FacebookTask implements Task {
     public TaskResult run(TaskContext context) {
         long start = System.currentTimeMillis();
 
-        FBMessage message = new FBMessage("1", "Test_"+start, start);
+        FBMessage message = new FBMessage("1", "19614945368", start);
         log.info("Sending Message to Queue: " + facebookQueueName + " => " + message);
         queue.convertAndSend(facebookQueueName, message);
 
