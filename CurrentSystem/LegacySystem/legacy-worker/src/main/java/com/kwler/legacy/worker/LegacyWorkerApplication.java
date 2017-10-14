@@ -1,6 +1,10 @@
 package com.kwler.legacy.worker;
 
 import lombok.extern.java.Log;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,4 +32,12 @@ public class LegacyWorkerApplication {
 	    String appToken = String.format("%s|%s", appId, appSecret);
 	    return new FacebookTemplate(appToken);
     }
+
+    @Bean
+	PhantomJSDriver phantomJSDriver(@Value("${phantomjs.binary.path}") String driverLocation) {
+        System.setProperty("phantomjs.binary.path", driverLocation);
+		PhantomJSDriver driver = new PhantomJSDriver(DesiredCapabilities.chrome());
+		driver.manage().window().setSize(new Dimension(1920, 1080));
+		return driver;
+	}
 }
