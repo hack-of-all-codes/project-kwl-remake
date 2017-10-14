@@ -4,6 +4,7 @@ import com.kwler.legacy.worker.workaround.PhantomJSFixedDriver;
 import lombok.extern.java.Log;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,7 +38,7 @@ public class LegacyWorkerApplication {
     @Bean
 	PhantomJSDriver phantomJSDriver(@Value("${phantomjs.binary.path}") String driverLocation) {
         System.setProperty("phantomjs.binary.path", driverLocation);
-		PhantomJSDriver driver = new PhantomJSFixedDriver(DesiredCapabilities.phantomjs());
+		PhantomJSDriver driver = new PhantomJSFixedDriver(new DesiredCapabilities("phantomjs", "10.3", Platform.MAC));
 		driver.manage().window().setSize(new Dimension(1920, 1080));
 		return driver;
 	}
