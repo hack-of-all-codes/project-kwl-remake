@@ -16,6 +16,9 @@ import java.util.Map;
 
 import static org.openqa.selenium.remote.CapabilityType.SUPPORTS_JAVASCRIPT;
 
+/**
+ * someone from the RemoteDriver dev team ruined this for us
+ */
 public class PhantomJSFixedDriver extends PhantomJSDriver {
 
     public PhantomJSFixedDriver(Capabilities desiredCapabilities) {
