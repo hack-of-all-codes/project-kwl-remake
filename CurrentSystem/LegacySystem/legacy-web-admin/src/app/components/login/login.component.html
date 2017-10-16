@@ -4,12 +4,13 @@
       <form name="loginForm" ng-submit="vm.login(user)" novalidate>
         <h1>KWL Admin Login</h1>
 
-        <div ng-class="{ 'has-error': loginForm.email.$touched && loginForm.email.$invalid }">
+        <div [ngClass]="{ 'has-error': email.touched && !email.valid }">
           <input type="text"
                  name="email"
                  class="form-control input-lg"
                  placeholder="Email Address"
                  [(ngModel)]="user.email"
+                 #email="ngModel"
                  required
           />
           <!--<div class="help-block" ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched">-->
@@ -17,12 +18,13 @@
           <!--</div>-->
         </div>
 
-        <div ng-class="{ 'has-error': loginForm.password.$touched && loginForm.password.$invalid }">
+        <div [ngClass]="{ 'has-error': password.touched && !password.valid }">
           <input type="password"
                  name="password"
                  class="form-control input-lg"
                  placeholder="Password"
                  [(ngModel)]="user.password"
+                 #password="ngModel"
                  required
           />
           <!--<div class="help-block" ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">-->
