@@ -3,32 +3,48 @@
     <section class="login_content">
       <form name="loginForm" ng-submit="vm.login(user)" novalidate>
         <h1>KWL Admin Login</h1>
+
         <div ng-class="{ 'has-error': loginForm.email.$touched && loginForm.email.$invalid }">
-          <input type="text" name="email" class="form-control input-lg" placeholder="Email Address"
-                 ng-model="user.email"
+          <input type="text"
+                 name="email"
+                 class="form-control input-lg"
+                 placeholder="Email Address"
+                 [(ngModel)]="user.email"
                  required
           />
-          <div class="help-block" ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched">
-            <div ng-messages-include="components/auth/errorMessages.html"></div>
-          </div>
+          <!--<div class="help-block" ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched">-->
+          <!--<div ng-messages-include="components/auth/errorMessages.html"></div>-->
+          <!--</div>-->
         </div>
+
         <div ng-class="{ 'has-error': loginForm.password.$touched && loginForm.password.$invalid }">
-          <input type="password" name="password" class="form-control input-lg" placeholder="Password"
-                 ng-model="user.password"
+          <input type="password"
+                 name="password"
+                 class="form-control input-lg"
+                 placeholder="Password"
+                 [(ngModel)]="user.password"
                  required
           />
-          <div class="help-block" ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">
-            <div ng-messages-include="components/auth/errorMessages.html"></div>
-          </div>
+          <!--<div class="help-block" ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">-->
+          <!--<div ng-messages-include="components/auth/errorMessages.html"></div>-->
+          <!--</div>-->
         </div>
+
         <div class="checkbox">
           <label>
-            <input type="checkbox" ng-model="user.rememberMe"/> Remember Me
+            <input type="checkbox"
+                   name="rememberMe"
+                   [(ngModel)]="user.rememberMe"/>Remember Me
           </label>
         </div>
+
         <div>
-          <button type="submit" class="btn btn-success btn-block btn-lg" ng-disabled="loginForm.$invalid"><i class="fa fa-sign-in"></i> Log in</button>
-          <a ui-sref="auth.passwordRecovery">Having trouble logging in?</a>
+          <button type="submit"
+                  class="btn btn-success btn-block btn-lg"
+                  ng-disabled="loginForm.$invalid">
+            <i class="fa fa-sign-in"></i> Log in
+          </button>
+          <a routerLink="/auth/password-recovery">Having trouble logging in?</a>
         </div>
 
         <app-footer></app-footer>
