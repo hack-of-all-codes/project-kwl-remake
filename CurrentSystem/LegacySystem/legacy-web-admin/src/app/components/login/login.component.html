@@ -1,7 +1,7 @@
 <div class="login_wrapper">
   <div class="animate form login_form">
     <section class="login_content">
-      <form #loginForm="ngForm" novalidate>
+      <form #loginForm="ngForm" (submit)="login()" novalidate>
         <h1>KWL Admin Login</h1>
 
         <div [ngClass]="{ 'has-error': email.touched && !email.valid }">

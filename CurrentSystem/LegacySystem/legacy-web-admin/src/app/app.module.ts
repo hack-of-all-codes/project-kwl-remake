@@ -8,6 +8,7 @@ import {LoginComponent} from './components/login/login.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {PasswordRecoveryComponent} from './components/password-recovery/password-recovery.component';
 import {AdminDashboardComponent} from './components/admin-dashboard/admin-dashboard.component';
+import {AuthenticationService} from "./service/authentication.service";
 
 const appRoutes: Routes = [
   {path: 'admin', component: AdminDashboardComponent},
@@ -28,10 +29,10 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
-      {enableTracing: true} // <-- debugging purposes only
+      {enableTracing: false} // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

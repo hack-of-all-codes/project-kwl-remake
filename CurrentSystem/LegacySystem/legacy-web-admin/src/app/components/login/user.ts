@@ -6,4 +6,7 @@ export class User {
     public rememberMe: boolean
   ) {  }
 
+  toString() {
+    return `email:${this.email} - password:${this.password} - rememberMe:${this.rememberMe}`;
+  }
 }
