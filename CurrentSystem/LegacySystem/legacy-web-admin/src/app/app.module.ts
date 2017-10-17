@@ -9,6 +9,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {PasswordRecoveryComponent} from './components/password-recovery/password-recovery.component';
 import {AdminDashboardComponent} from './components/admin-dashboard/admin-dashboard.component';
 import {AuthenticationService} from "./service/authentication.service";
+import {HttpClientModule} from "@angular/common/http";
 
 const appRoutes: Routes = [
   {path: 'admin', component: AdminDashboardComponent},
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: false} // <-- debugging purposes only
