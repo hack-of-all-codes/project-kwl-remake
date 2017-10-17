@@ -1,7 +1,7 @@
 <div class="login_wrapper">
   <div class="animate form login_form">
     <section class="login_content">
-      <form name="loginForm" ng-submit="vm.login(user)" novalidate>
+      <form #loginForm="ngForm" novalidate>
         <h1>KWL Admin Login</h1>
 
         <div [ngClass]="{ 'has-error': email.touched && !email.valid }">
@@ -11,11 +11,13 @@
                  placeholder="Email Address"
                  [(ngModel)]="user.email"
                  #email="ngModel"
+                 email
                  required
           />
-          <!--<div class="help-block" ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched">-->
-          <!--<div ng-messages-include="components/auth/errorMessages.html"></div>-->
-          <!--</div>-->
+          <div class="help-block" *ngIf="email.touched && !email.valid">
+            <p *ngIf="email.errors.required">This field is required</p>
+            <p *ngIf="email.errors.email">This needs to be a valid email</p>
+          </div>
         </div>
 
         <div [ngClass]="{ 'has-error': password.touched && !password.valid }">
@@ -26,10 +28,12 @@
                  [(ngModel)]="user.password"
                  #password="ngModel"
                  required
+                 minlength="8"
           />
-          <!--<div class="help-block" ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">-->
-          <!--<div ng-messages-include="components/auth/errorMessages.html"></div>-->
-          <!--</div>-->
+          <div class="help-block" *ngIf="password.errors && password.touched">
+            <p *ngIf="password.errors.required">This field is required</p>
+            <p *ngIf="password.errors.minlength">Password must be minimum of 8 characters</p>
+          </div>
         </div>
 
         <div class="checkbox">
@@ -43,7 +47,7 @@
         <div>
           <button type="submit"
                   class="btn btn-success btn-block btn-lg"
-                  ng-disabled="loginForm.$invalid">
+                  [disabled]="!loginForm.valid">
             <i class="fa fa-sign-in"></i> Log in
           </button>
           <a routerLink="/auth/password-recovery">Having trouble logging in?</a>
