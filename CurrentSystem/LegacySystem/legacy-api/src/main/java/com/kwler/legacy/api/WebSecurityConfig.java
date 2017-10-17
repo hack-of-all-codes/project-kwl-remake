@@ -2,6 +2,10 @@ package com.kwler.legacy.api;
 
 import com.kwler.legacy.api.security.BCryptPasswordEncoder;
 import com.kwler.legacy.api.security.StandardUserDetailsService;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AdviceMode;
@@ -19,22 +23,16 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
+@Log
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, mode = AdviceMode.ASPECTJ)
+@FieldDefaults(makeFinal=true, level= AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
     StandardUserDetailsService standardUserDetailsService;
-
-    @Autowired
     BCryptPasswordEncoder passwordEncoder;
-
-    @Value("${app.cors.allowed.origins}")
-    String[] allowedOrigins;
-
-    @Value("${app.cors.allowed.methods}")
-    String[] allowedMethods;
 
     @Override
     public void configure(WebSecurity web) throws Exception {
@@ -62,7 +60,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    CorsConfigurationSource corsConfigurationSource() {
+    CorsConfigurationSource corsConfigurationSource(
+            @Value("${app.cors.allowed.origins}") String[] allowedOrigins,
+            @Value("${app.cors.allowed.methods}") String[] allowedMethods
+    ) {
+        log.info("allowed origins: " + Arrays.asList(allowedOrigins));
+        log.info("allowedMethod: " + Arrays.asList(allowedMethods));
+
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList(allowedOrigins));
         configuration.setAllowedMethods(Arrays.asList(allowedMethods));
