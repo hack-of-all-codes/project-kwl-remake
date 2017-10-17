@@ -20,6 +20,10 @@ public class KWLStandardUserDetails implements UserDetails {
             new SimpleGrantedAuthority("ROLE_STANDARD")
     );
 
+    public StandardUser getStandardUser() {
+        return standardUser;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if (getUsername().equalsIgnoreCase("oat@meal.com")) {

@@ -22,6 +22,10 @@ public class KWLAdminUserDetails implements UserDetails {
         );
     }
 
+    public AdminUser getAdminUser() {
+        return adminUser;
+    }
+
     @Override
     public String getPassword() {
         return adminUser.getUserAccount().getHashedPassword();
