@@ -6,9 +6,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(
-        path = "customers",
-        itemResourceRel = "customer",
-        collectionResourceRel = "customers"
+        path = "admin",
+        itemResourceRel = "admin-user",
+        collectionResourceRel = "admin-users"
 )
 public interface AdminUserRestRepository extends MongoRepository<AdminUser, String> {
 
