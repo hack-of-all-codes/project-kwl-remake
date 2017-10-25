@@ -1,18 +1,17 @@
 package com.kwler.legacy.api.dashboard.service;
 
 import com.kwler.legacy.api.admin.model.Customer;
-import com.kwler.legacy.api.dashboard.model.Registration;
 import com.kwler.legacy.api.admin.model.StandardUser;
-import com.kwler.legacy.api.dashboard.model.UserRegistration;
 import com.kwler.legacy.api.admin.repository.CustomerRestRepository;
 import com.kwler.legacy.api.admin.repository.StandardUserRestRepository;
+import com.kwler.legacy.api.dashboard.model.Registration;
+import com.kwler.legacy.api.dashboard.model.UserRegistration;
 import com.kwler.legacy.api.dashboard.repository.UserRegistrationRestRepository;
 import com.kwler.legacy.api.security.BCryptPasswordEncoder;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.java.Log;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;

@@ -1,7 +1,7 @@
 package com.kwler.legacy.api.metrics.rest;
 
-import com.kwler.legacy.api.metrics.repository.FactFanRepository;
 import com.kwler.legacy.api.metrics.model.FactFan;
+import com.kwler.legacy.api.metrics.repository.FactFanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
