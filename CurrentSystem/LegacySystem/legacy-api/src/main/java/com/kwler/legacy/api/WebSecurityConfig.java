@@ -6,7 +6,6 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.java.Log;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +20,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import java.util.Arrays;
+import java.util.List;
 
 @Log
 @Configuration
@@ -42,14 +41,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .cors().and()
+
                 .authorizeRequests()
                     .antMatchers("/adminUsers/**").hasRole("ADMIN")
                     .antMatchers("/standardUsers/**").hasAnyRole("ADMIN", "STANDARD")
-                    .anyRequest().authenticated()
+                    .anyRequest().permitAll().and()
 
-                .and().httpBasic()
-                .and().cors()
-                .and().csrf().disable();
+                .httpBasic().and()
+
+                .csrf().disable();
     }
 
     @Override
@@ -61,17 +62,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     CorsConfigurationSource corsConfigurationSource(
-            @Value("${app.cors.allowed.origins}") String[] allowedOrigins,
-            @Value("${app.cors.allowed.methods}") String[] allowedMethods
+            @Value("${app.cors.allowed.origins}") List<String> allowedOrigins,
+            @Value("${app.cors.allowed.methods}") List<String> allowedMethods,
+            @Value("${app.cors.allowed.headers}") List<String> allowedHeaders
     ) {
-        log.info("allowed origins: " + Arrays.asList(allowedOrigins));
-        log.info("allowedMethod: " + Arrays.asList(allowedMethods));
+        log.info("CORS Configuration:");
+        log.info("allowed origins: " + allowedOrigins);
+        log.info("allowed methods: " + allowedMethods);
+        log.info("allowed headers: " + allowedHeaders);
 
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList(allowedOrigins));
-        configuration.setAllowedMethods(Arrays.asList(allowedMethods));
+        configuration.setAllowedOrigins(allowedOrigins);
+        configuration.setAllowedMethods(allowedMethods);
+        configuration.setAllowCredentials(true);
+        configuration.setAllowedHeaders(allowedHeaders);
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
+
         return source;
     }
 
