@@ -85,6 +85,16 @@ html, body {
   margin: 1rem;
 }
 
+/*emoji button: full width */
+.fun {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+/*emoji display without cropping*/
+.gif {
+  max-width: 100%;
+}
+
 
 /*---Media Queries --*/
 @media (max-width: 992px) {
