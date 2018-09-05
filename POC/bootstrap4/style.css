@@ -197,6 +197,9 @@ hr.light-100 {
     font-size: 2em;
     padding: 1rem;
   }
+  .welcome > div > p {
+    font-size: .8rem;
+  }
 }
 
 
