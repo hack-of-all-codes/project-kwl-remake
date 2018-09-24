@@ -2,6 +2,7 @@
 - Got bored today and decided to make some Evil Plans for Remaking the KWL Project from the ground up.
 - Just 1 rule/constraint that I need to follow: Use AWS services as much as possible
 - [Business Rules](BUSINESS_RULES.md)
+- [A list of what went wrong](WENT_WRONG.md)
 
 ## Wishlist: Data Harvesting
 - Create separate Spring Boot modules for each type of harvesting
