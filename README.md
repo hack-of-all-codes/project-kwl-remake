@@ -33,7 +33,7 @@
 - Liquibase for schema version control
 
 ## Wishlist: Front End
-- Use ReactJS + Flux instead of Angular as the app framework
+- Use Angular, its the simplest framework that is available in the market right now
 - Unit Tests (Karma?)
 - Use Polymer/WebComponents for the Admin just for fun
 
