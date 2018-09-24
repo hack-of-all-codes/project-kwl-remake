@@ -11,5 +11,5 @@ A compilation of all the POC stuff that went to prod
 - does not scale to the amount of data
 - extremely slow, despite the huge provisions
 
-## Overall
-- misuse of databases
+## Overarching Issues
+- misuse of polyglot databases

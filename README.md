@@ -5,16 +5,17 @@
 - [A list of what went wrong](WENT_WRONG.md)
 
 ## Wishlist: Data Harvesting
-- Create separate Spring Boot modules for each type of harvesting
-- Use Spring Boot + Whatever Framework for scraping sites (check out Nutch)
-- Scraper should harvest and store data without processing its contents
-- Harvested Data should be stored in CassandraDB
+- Simplify the data harvesting process
+- A separate project for API harvests and web page harvests
+- Use Google Cloud Functions [Node.js](POC/poc-headless-chrome) for harvesting web pages
+- Use another Cloud Function to harvest API data sources (for POC)
+- Store Results in MongoDB and S3
 
 ## Wishlist: Data Processing
 - Use Spring Cloud Dataflow instead of Pentaho
 - Use a Spark Cluster for Stream Processing
 - Use a Hadoop Cluster for large batch jobs
-- Use a Messaging Bus for Asyn Workflow
+- Use a Messaging Bus for Async Workflow
 - Possibility of using TensorFlow for analyzing sites for data
 
 ## Wishlist: Platform
@@ -38,7 +39,7 @@
 
 ## Wishlist: Everything Else
 - Unit and Integrations Tests
-- Jenkins CI
+- Travis CI
 - Use Spring Config server
 
 ## Things that I would personally love to keep
