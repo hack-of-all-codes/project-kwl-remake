@@ -33,6 +33,7 @@
 - Liquibase for schema version control
 
 ## Wishlist: Front End
+- Use Firebase hosting
 - Use Angular, its the simplest framework that is available in the market right now
 - Unit Tests (Karma?)
 - Use Polymer/WebComponents for the Admin just for fun
@@ -48,32 +49,25 @@
 - Ansible
 
 # The Plan
-## Phase 1: Make It Work
-- Figure out the following technologies
+## Phase 1: Harvest All the Data!!!
+Harvest the data and store it somewhere
 ```
-Spring Cloud DataFlow
-Spring Security OAuth2
-Kafka
-Spark
-Hadoop
-Nutch
-TensorFlow
-Spring + MyBatis
-Kafka - no idea where to use this
+GCP Cloud Functions
+MongoDB
+Cloud Storage
 ```
 - Start with the Master Data and Auth Server
 - Harvest and Process iTunes Data
 - Harvest Data from APIs
 - Implement Scraper
-```
-Hystrix
-```
-## Phase 2: Make it Cool
+
+## Phase 2: Process All the Data!!!
 - Setup Jenkins
 - Setup a Monitoring Service
 
-## Phase 3: Make it Invinsible
-- Setup Fault Tolerance
+## Phase 3: Display All the Data!!!
+- Build the Frontend
+- 
 
 # The Unknowns
 - How to schedule batch jobs (check DataFlow)
