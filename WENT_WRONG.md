@@ -1,8 +1,10 @@
 # What went wrong?
-A compilation of all the POC stuff that went to prod
+Everything thats is wrong with the project. Everyone is aware of these but no one has the time to fix them, perpetuating the issue the longer we avoid them.
 
 ## Data Harvest
+The "Harvest" layer is our integration point to other websites/APIs, it was horribly designed with a lot of coupling with the job coordination layey, now the devs working on it are helplessly swamped with requests for updates.
 - feature-envy harvester performs data processing
+- the harvesters are vastly dependent on a coordinator system
 - an update on the target page breaks the post-processing code
 - no automated runtime error checks
 - extremely difficult to test

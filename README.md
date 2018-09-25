@@ -1,6 +1,6 @@
 # Project: KWL Remake
 - Got bored today and decided to make some Evil Plans for Remaking the KWL Project from the ground up.
-- Just 1 rule/constraint that I need to follow: Use AWS services as much as possible
+- Just 1 minor change that I need to follow: Use GCP since they locked me out of the AWS Admin privileges 
 - [Business Rules](BUSINESS_RULES.md)
 - [A list of what went wrong](WENT_WRONG.md)
 
@@ -62,7 +62,6 @@ Cloud Storage
 - Implement Scraper
 
 ## Phase 2: Process All the Data!!!
-- Setup Jenkins
 - Setup a Monitoring Service
 
 ## Phase 3: Display All the Data!!!
