@@ -1,4 +1,4 @@
-# Project: KWL Remake
+# Kwler
 
 Got bored today and decided to make some awesome plans for remaking the KWL Project from the ground up and decided to name it something that represents a cooler version...[Kwler.NET](https://kwler.net)
 
