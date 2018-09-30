@@ -9,6 +9,7 @@ The "Harvest" layer is our integration point to other websites/APIs, it was horr
 - an update on the target page breaks the post-processing code
 - no automated runtime error checks
 - extremely difficult to test
+- every freakin time a website changes their layout someone has to swoop in and change the code
 
 ## Data Processing
 - does not scale to the amount of data
