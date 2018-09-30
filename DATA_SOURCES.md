@@ -16,3 +16,5 @@ This is where we get most of out data from
 - [Billboard](http://www.billboard.com)
 
 ## Blogs
+- [Acclaim](http://acclaimmag.com/music/)
+- [AAA Backstage](https://aaabackstage.com)
