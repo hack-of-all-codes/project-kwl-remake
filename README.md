@@ -1,8 +1,8 @@
 # Project: KWL Remake
-- Got bored today and decided to make some Evil Plans for Remaking the KWL Project from the ground up.
-- Just 1 minor change that I need to follow: Use GCP since they locked me out of the AWS Admin privileges 
+- Got bored today and decided to make some awesome plans for remaking the KWL Project from the ground up.
 - [Business Rules](BUSINESS_RULES.md): A short definition
 - [What Went Wrong](WENT_WRONG.md): A list of rants
+- Just 1 minor change that I need to follow: Use GCP since they locked me out of the AWS Admin privileges, GCP has a generous trial package that I can utilize without spending a dime 
 
 ## Wishlist: Data Harvesting
 - Simplify the data harvesting process
