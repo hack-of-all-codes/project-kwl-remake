@@ -5,6 +5,7 @@ This is where we get most of out data from
 - Youtube
 - Spotify
 - Apple Music
+- Last.fm
 
 ## Social Networks
 - Facebook
