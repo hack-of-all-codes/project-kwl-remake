@@ -12,6 +12,7 @@ This is where we get most of out data from
 - Twitter
 
 ## Charts
-
+- [Air](https://www.air.org.au)
+- [Billboard](http://www.billboard.com)
 
 ## Blogs
