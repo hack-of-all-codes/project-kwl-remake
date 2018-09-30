@@ -18,4 +18,4 @@ The "Harvest" layer is our integration point to other websites/APIs, it was horr
 ## Overarching Issues
 - misuse of polyglot databases
 - misuse of source control, such as using Git for a Pentaho project
-- the systematic absence of automated testing; this has got to be the one fatal flaw that irked me the most
+- the systemic absence of automated testing; this has got to be the one fatal flaw that irked me the most
