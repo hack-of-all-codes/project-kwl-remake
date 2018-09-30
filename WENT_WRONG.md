@@ -17,3 +17,4 @@ The "Harvest" layer is our integration point to other websites/APIs, it was horr
 
 ## Overarching Issues
 - misuse of polyglot databases
+- misuse of source control, such as using Git for a Pentaho project
