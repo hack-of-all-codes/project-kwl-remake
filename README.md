@@ -1,5 +1,5 @@
 # Project: KWL Remake
-![KWLer Logo](Assets/KwlerIcons.ico/apple-icon-180x180.png "KWLer Logo")
+[![KWLer Logo](Assets/KwlerIcons.ico/apple-icon-180x180.png "KWLer Logo")](https://kwler.net)
 - Got bored today and decided to make some awesome plans for remaking the KWL Project from the ground up
 - Decided to name it Kwler
 - [Business Rules](BUSINESS_RULES.md): A short definition
