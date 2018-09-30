@@ -7,5 +7,5 @@ Numbers and statistics regarding the artist's current and historical performance
 - imagine a dashboard for the artist's career "health"
 
 #### Artists and Repertoire (A&R)
-Digitally scout and for talents
+Digitally scout and for talents (Emerging Artists)
 - after gaining a better understanding of the music industry on the rise and fall of music legends, we hopefully should have a better insight on spotting up-and-coming artists
